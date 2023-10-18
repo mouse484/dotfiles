@@ -1,0 +1,11 @@
+#!/bin/sh
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install curl git
+
+{{ if eq .chezmoi.os "darwin" }}
+brew insatall coreutils
+{{ end }}
+
+brew install asdf
