@@ -1,0 +1,20 @@
+zmodule environment
+zmodule input
+zmodule utility
+
+zmodule termtitle
+
+zmodule asciiship
+zmodule duration-info
+zmodule git-info
+
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-history-substring-search
+
+zmodule zdharma-continuum/history-search-multi-word
+
+zmodule asdf
