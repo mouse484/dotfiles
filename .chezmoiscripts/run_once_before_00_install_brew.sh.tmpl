@@ -1,5 +1,7 @@
 #!/bin/sh
 
+{{- if .brew }}
+
 echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 {{ if eq .chezmoi.os "linux" }}
@@ -14,3 +16,5 @@ brew install coreutils
 {{ end }}
 
 brew install asdf
+
+{{ end }}
