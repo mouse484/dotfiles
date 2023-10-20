@@ -1,7 +1,11 @@
 #!/bin/sh
 
-# asdf
-yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+{{ if eq .chezmoi.os "linux" }}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >>$HOME/.zshrc
+source $HOME/.zshrc
+{{- end }}
 
 brew install curl git
 
