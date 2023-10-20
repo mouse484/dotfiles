@@ -1,5 +1,6 @@
 #!/bin/sh
 
+{{- if .asdf -}}
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
 asdf nodejs update-nodebuild
@@ -7,3 +8,4 @@ asdf nodejs update-nodebuild
 asdf install nodejs lts
 
 asdf global nodejs lts
+{{- end -}}

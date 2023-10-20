@@ -1,6 +1,8 @@
 setopt +o nomatch
 
+{{- if .asdf -}}
 $(brew --prefix asdf)/libexec/asdf.sh
+{{- end -}}
 
 zstyle ':zim:zmodule' use 'degit'
 ZIM_HOME=~/.zim
