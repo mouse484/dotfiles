@@ -1,6 +1,8 @@
 #!/bin/sh
 
 {{- if .asdf -}}
+brew install asdf
+
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
 asdf nodejs update-nodebuild
