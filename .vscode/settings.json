@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*rc.tmpl": "shellscript",
+    "*.zsh.tmpl": "shellscript",
+    "*.sh.tmpl": "shellscript",
+    "*.toml.tmpl": "toml"
+  }
+}
