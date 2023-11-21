@@ -1,8 +1,8 @@
 #!/bin/sh
 
-{{- if .brew }}
-
+if !(type "brew" > /dev/null 2>&1); then
 echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
 {{ if eq .chezmoi.os "linux" }}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >>$HOME/.zshrc
@@ -15,4 +15,3 @@ brew install curl git
 brew install coreutils
 {{ end }}
 
-{{ end }}
