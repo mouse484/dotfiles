@@ -3,9 +3,6 @@ compinit
 
 setopt +o nomatch
 
-{{- if .asdf -}}
-$(brew --prefix asdf)/libexec/asdf.sh
-{{- end }}
 
 # zim
 zstyle ':zim:zmodule' use 'degit'
