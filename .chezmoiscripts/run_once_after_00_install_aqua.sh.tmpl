@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 if [ ! $(command -v aqua) ]; then
     cd $HOME/.cache
@@ -8,3 +8,7 @@ if [ ! $(command -v aqua) ]; then
     ./aqua-installer
     rm -f aqua-installer
 fi
+
+export AQUA_GLOBAL_CONFIG={{ .chezmoi.homeDir }}/.config/aqua.yaml
+
+aqua install --all
