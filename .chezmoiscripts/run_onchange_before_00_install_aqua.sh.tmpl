@@ -9,6 +9,7 @@ if [ ! $(command -v aqua) ]; then
     rm -f aqua-installer
 fi
 
+export PATH=${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH
 export AQUA_GLOBAL_CONFIG={{ .chezmoi.homeDir }}/.config/aqua.yaml
 
 aqua install --all
