@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  main:
+    name: chezmoi apply
+    runs-on: ubuntu-latest
+    steps:
+    - run: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply mouse484
