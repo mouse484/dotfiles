@@ -8,3 +8,5 @@ zmodule zsh-users/zsh-completions --fpath src
 
 zmodule zsh-users/zsh-autosuggestions
 zmodule marlonrichert/zsh-autocomplete
+
+zmodule azu/ni.zsh --source ni.zsh
