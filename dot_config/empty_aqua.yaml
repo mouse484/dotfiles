@@ -14,4 +14,4 @@ packages:
   - name: starship/starship@v1.18.2
   - name: twpayne/chezmoi@v2.47.2
   - name: aquaproj/registry-tool@v0.2.3
-  - name: jdx/mise@v2024.3.9
+  - name: jdx/mise@v2024.3.11
