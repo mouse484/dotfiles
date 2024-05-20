@@ -4,8 +4,7 @@ compinit
 setopt +o nomatch
 
 # mise
-eval "$(mise activate zsh)"
-export PATH="$HOME/.local/share/mise/shims:$PATH"
+eval "$(mise activate zsh --shims)"
 mise settings set experimental true
 alias mr='mise run --'
 
