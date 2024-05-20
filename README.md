@@ -8,10 +8,10 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply mouse484
 
 ## Features
 
-| Name                                | Description         |
-| ----------------------------------- | ------------------- |
-| [chezmoi](https://www.chezmoi.io/)  | Dotfiles Manager    |
-| [aqua](https://aquaproj.github.io/) | CLI Version Manager |
-| [zsh](https://www.zsh.org/)         | Main Shell          |
-| [Starship](https://starship.rs/)    | Cross-Shell Prompt  |
-| [Zim](https://zimfw.sh/)            | Zsh Framework       |
+| Name                               | Description                   |
+| ---------------------------------- | ----------------------------- |
+| [chezmoi](https://www.chezmoi.io/) | Dotfiles Manager              |
+| [mise](https://mise.jdx.dev)       | The front-end to your dev env |
+| [zsh](https://www.zsh.org/)        | Main Shell                    |
+| [Starship](https://starship.rs/)   | Cross-Shell Prompt            |
+| [Zim](https://zimfw.sh/)           | Zsh Framework                 |

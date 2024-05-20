@@ -1,9 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>aquaproj/aqua-renovate-config#2.3.0",
-    "github>aquaproj/aqua-renovate-config:installer-script#2.3.0(.chezmoiscripts/run_onchange_after_00_install_aqua.sh.tmpl)"
-  ],
   "automerge": true,
   "platformAutomerge": true,
   "dependencyDashboard": true
