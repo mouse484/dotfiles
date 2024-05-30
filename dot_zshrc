@@ -1,0 +1,31 @@
+ZIM_HOME=~/.zim
+
+# marlonrichert/zsh-autocomplete
+source ${ZIM_HOME}/modules/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# zsh config
+setopt +o nomatch
+setopt auto_pushd
+setopt pushd_ignore_dups
+
+# zim
+zstyle ':zim:zmodule' use 'degit'
+
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+    https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+    source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+
+source ${ZIM_HOME}/init.zsh
+
+zstyle ':autocomplete:*' ignored-input 'cd'
+# mise
+eval "$(mise activate zsh --shims)"
+alias mr='mise run --'
+
+# starship
+eval "$(starship init zsh)"
