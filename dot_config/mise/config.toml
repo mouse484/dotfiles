@@ -1,3 +1,6 @@
 [tools]
 starship = "latest"
 chezmoi = "latest"
+
+[settings]
+experimental = true
