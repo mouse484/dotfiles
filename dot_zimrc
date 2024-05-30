@@ -1,10 +1,5 @@
 zmodule zsh-users/zsh-syntax-highlighting
 
 zmodule zsh-users/zsh-completions --fpath src
-
+zmodule marlonrichert/zsh-autocomplete --source zsh-autocomplete.plugin.zsh
 zmodule zsh-users/zsh-autosuggestions
-
-zmodule marlonrichert/zsh-autocomplete
-
-zmodule zsh-users/zsh-history-substring-search
-
