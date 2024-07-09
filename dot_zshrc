@@ -19,7 +19,8 @@ fi
 
 source ${ZIM_HOME}/init.zsh
 # mise
-eval "$(~/.local/bin/mise activate zsh --shims)"
+eval "$(~/.local/bin/mise activate zsh)"
+export PATH="$HOME/.local/share/mise/shims:$PATH"
 alias mr='mise run --'
 
 # starship
