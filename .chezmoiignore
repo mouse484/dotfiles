@@ -1,2 +1,4 @@
+.github/
 .vscode/
-renovate.json
+install.sh
+README.md

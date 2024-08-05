@@ -18,10 +18,9 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
 fi
 
 source ${ZIM_HOME}/init.zsh
-# mise
-eval "$(~/.local/bin/mise activate zsh)"
-export PATH="$HOME/.local/share/mise/shims:$PATH"
-alias mr='mise run --'
+# aqua
+export PATH=$HOME/.local/share/aquaproj-aqua/bin:$PATH
+export AQUA_GLOBAL_CONFIG=$HOME/.config/aqua.yaml
 
 # starship
 eval "$(starship init zsh)"
