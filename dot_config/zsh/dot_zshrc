@@ -22,5 +22,9 @@ source ${ZIM_HOME}/init.zsh
 export PATH=$HOME/.local/share/aquaproj-aqua/bin:$PATH
 export AQUA_GLOBAL_CONFIG=$HOME/.config/aqua.yaml
 
+if command -v aqua &> /dev/null; then
+    source <(aqua completion zsh)
+fi
+
 # starship
 eval "$(starship init zsh)"
