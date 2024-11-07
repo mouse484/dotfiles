@@ -12,4 +12,4 @@ registries:
 packages:
 - name: starship/starship@v1.21.1
 - name: twpayne/chezmoi@v2.53.1
-- name: jdx/mise@v2024.11.3
+- name: jdx/mise@v2024.11.4
