@@ -1,18 +1,28 @@
 # zsh config
+autoload -Uz colors
+colors
+
 setopt +o nomatch
+
+setopt inc_append_history 
+setopt share_history
+
 setopt auto_pushd
 setopt pushd_ignore_dups
 
+setopt interactivecomments
+
+# Aliases
 . "$ZDOTDIR/.aliases"
 
 # mise
-eval "$(~/.local/bin/mise activate zsh)"
-
-# starship
-eval "$(starship init zsh)"
+eval "$(~/.local/bin/mise activate --shims zsh)"
 
 # sheldon
 eval "$(sheldon source)"
+
+# starship
+eval "$(starship init zsh)"
 
 # rust
 . "$HOME/.cargo/env"
