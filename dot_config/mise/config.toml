@@ -1,2 +1,9 @@
+[tools]
+starship = "latest"
+chezmoi = "latest"
+
+node = "latest" 
+"npm:@antfu/ni" = "latest"
+
 [settings]
 experimental = true

@@ -3,6 +3,9 @@ setopt +o nomatch
 setopt auto_pushd
 setopt pushd_ignore_dups
 
+# mise
+eval "$(~/.local/bin/mise activate zsh)"
+
 # zim
 zstyle ':zim:zmodule' use 'degit'
 
@@ -18,18 +21,7 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
 fi
 
 source ${ZIM_HOME}/init.zsh
-# aqua
-export PATH=$HOME/.local/share/aquaproj-aqua/bin:$PATH
-export AQUA_GLOBAL_CONFIG=$HOME/.config/aqua.yaml
 
-if command -v aqua &> /dev/null; then
-    source <(aqua completion zsh)
-    aqua install --all
-fi
-
-# mise
-eval "$(mise activate zsh)"
-export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # starship
 eval "$(starship init zsh)"
