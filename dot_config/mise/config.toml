@@ -1,6 +1,7 @@
 [tools]
 starship = "latest"
 chezmoi = "latest"
+"cargo:sheldon" = "latest"
 
 node = "latest" 
 "npm:@antfu/ni" = "latest"
