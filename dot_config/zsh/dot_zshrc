@@ -1,4 +1,6 @@
 # zsh config
+export LANG=jp_JP.UTF-8
+
 autoload -Uz colors
 colors
 
