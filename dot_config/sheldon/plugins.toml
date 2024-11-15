@@ -26,3 +26,6 @@ github = "marlonrichert/zsh-autocomplete"
 post = """
 zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 3 )) )'
 """
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"

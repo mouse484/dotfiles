@@ -12,11 +12,14 @@ setopt pushd_ignore_dups
 
 setopt interactivecomments
 
-# Aliases
 . "$ZDOTDIR/.aliases"
+
+mkdir -p $ZDOTDIR/completion
+FPATH="$ZDOTDIR/completion:$FPATH"
 
 # mise
 eval "$(~/.local/bin/mise activate --shims zsh)"
+mise completion zsh  > $ZDOTDIR/completion/_mise
 
 # sheldon
 eval "$(sheldon source)"

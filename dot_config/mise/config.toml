@@ -1,7 +1,8 @@
 [tools]
-starship = "latest"
 chezmoi = "latest"
+starship = "latest"
 "cargo:sheldon" = "latest"
+usage = "latest" # mise completion
 
 node = "latest" 
 "npm:@antfu/ni" = "latest"
