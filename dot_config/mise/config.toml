@@ -1,7 +1,7 @@
 [tools]
 chezmoi = "latest"
 starship = "latest"
-"cargo:sheldon" = "latest"
+"aqua:rossmacarthur/sheldon" = "latest"
 usage = "latest" # mise completion
 
 node = "latest" 

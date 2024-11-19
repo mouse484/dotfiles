@@ -28,6 +28,3 @@ eval "$(sheldon source)"
 
 # starship
 eval "$(starship init zsh)"
-
-# rust
-. "$HOME/.cargo/env"
