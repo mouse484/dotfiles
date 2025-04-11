@@ -1,31 +1,30 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+
 format = """
-$hostname\
-$fossil_branch\
+$directory\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-$hg_branch\
 $fill\
-$all
-$container\
-$directory\
-$character
+$all\
+
+$character\
 """
 
 [fill]
-symbol = ' '
+symbol = " "
 
-[username]
+[git_status]
+modified = "[ $count](bright-blue)"
+staged = '[ $count](green)'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = '[📦${count}](yellow)'
+deleted = '[🗑️ $count](red)'
+
+[aws]
 disabled = true
-
-[hostname]
-ssh_only = true
-trim_at = '-'
-format = '[$ssh_symbol$hostname]($style) '
-
-[ruby]
-detect_variables = []
