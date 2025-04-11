@@ -1,9 +1,11 @@
 [tools]
+# for mise Completion: https://usage.jdx.dev/
+usage = "latest"
+# Shell Tools
 chezmoi = "latest"
 starship = "latest"
 "aqua:rossmacarthur/sheldon" = "latest"
-usage = "latest"
-
+# Language Tools
 node = "latest"
 "npm:@antfu/ni" = "latest"
 
