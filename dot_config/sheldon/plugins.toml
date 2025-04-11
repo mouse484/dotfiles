@@ -39,8 +39,3 @@ apply = ["defer"]
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 apply = ["defer"]
-[plugins.zsh-completions.hooks]
-post = """
-autoload -Uz compinit;
-compinit -C
-"""

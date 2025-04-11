@@ -17,14 +17,21 @@ setopt interactive_comments
 setopt extended_glob
 
 # Completion
+COMPLATION_PATH="$ZDOTDIR/.completion"
+mkdir -p "$COMPLATION_PATH"
+fpath=($COMPLATION_PATH $fpath)
+
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+  zsh-defer compinit
+else
+  compinit -C
+fi
+
 setopt complete_in_word
 setopt globdots
 setopt mark_dirs
 setopt list_packed
-
-COMPLATION_PATH="$ZDOTDIR/.completion"
-mkdir -p "$COMPLATION_PATH"
-fpath=($COMPLATION_PATH $fpath)
 
 # History
 HISTFILE=~/.zsh_history
@@ -42,15 +49,22 @@ setopt hist_save_no_dups
 
 # Mise / Development Tools & Environment
 eval "$(~/.local/bin/mise activate zsh)"
-
 # Starship / Prompt Customization
 eval "$(starship init zsh)"
-
-# Sheldon / Zsh Plugin Manager
+# sheldon / Zsh Plugin Manager
 eval "$(sheldon source)"
 
-# Tools Completions
-mise completion zsh >$COMPLATION_PATH/_mise
-chezmoi completion zsh >$COMPLATION_PATH/_chezmoi
-starship completions zsh >$COMPLATION_PATH/_starship
-sheldon completions --shell zsh >$COMPLATION_PATH/_sheldon
+# Tools completion
+local completion_commands=(
+  'mise completion zsh'
+  'starship completions zsh'
+  'sheldon completions --shell zsh'
+  'chezmoi completion zsh'
+)
+
+for cmd in $completion_commands; do
+  local tool=${cmd%% *}  # コマンドの最初の単語を取得
+  if [[ -n ${COMPLATION_PATH}/_${tool}(#qN.mh+24) ]]; then
+    zsh-defer eval "${cmd} >$COMPLATION_PATH/_${tool}"
+  fi
+done
