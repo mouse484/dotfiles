@@ -19,4 +19,4 @@ export ZDOTDIR=$HOME/.config/zsh
 | [mise](https://mise.jdx.dev/)      | Dev Env            |
 | [zsh](https://www.zsh.org/)        | Main Shell         |
 | [Starship](https://starship.rs/)   | Cross-Shell Prompt |
-| [Zim](https://zimfw.sh/)           | Zsh Framework      |
+| [Sheldon](https://sheldon.cli.rs/) | Zsh Plugin Manager |
