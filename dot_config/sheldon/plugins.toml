@@ -13,19 +13,18 @@
 shell = "zsh"
 
 [plugins]
-
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
 [plugins.zsh-autocomplete]
 github = "marlonrichert/zsh-autocomplete"
 [plugins.zsh-autocomplete.hooks]
-post = """
+pre = """
 zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 3 )) )'
 """
-
-[plugins.zsh-completions]
-github = "zsh-users/zsh-completions"

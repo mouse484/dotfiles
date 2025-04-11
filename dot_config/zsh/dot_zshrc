@@ -1,30 +1,33 @@
-# zsh config
-export LANG=jp_JP.UTF-8
+# Locale
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
-autoload -Uz colors
-colors
+# General
+autoload -Uz colors && colors
+
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt correct
 
 setopt +o nomatch
 
-setopt inc_append_history 
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 setopt share_history
+setopt hist_ignore_dups
+setopt hist_reduce_blanks
 
-setopt auto_pushd
-setopt pushd_ignore_dups
-
-setopt interactivecomments
-
+# Aliases
 . "$ZDOTDIR/.aliases"
 
-mkdir -p $ZDOTDIR/completion
-FPATH="$ZDOTDIR/completion:$FPATH"
+# Mise / Development Tools & Environment
+eval "$(mise activate zsh)"
 
-# mise
-eval "$(~/.local/bin/mise activate --shims zsh)"
-mise completion zsh  > $ZDOTDIR/completion/_mise
-
-# sheldon
-eval "$(sheldon source)"
-
-# starship
+# Starship / Prompt Customization
 eval "$(starship init zsh)"
+
+# Sheldon / Zsh Plugin Manager
+eval "$(sheldon source)"
