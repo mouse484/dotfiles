@@ -34,7 +34,7 @@ setopt mark_dirs
 setopt list_packed
 
 # History
-HISTFILE=~/.zsh_history
+HISTFILE="$ZDOTDIR/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt share_history
