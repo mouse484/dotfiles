@@ -3,14 +3,36 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # General
-autoload -Uz colors && colors
+autoload -Uz colors
+colors
 
+setopt +o nomatch
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt correct
+setopt no_beep
+setopt print_eight_bit
+setopt interactive_comments
+setopt extended_glob
 
-setopt +o nomatch
+# Aliases
+. "$ZDOTDIR/.aliases"
+
+# Mise / Development Tools & Environment
+eval "$(~/.local/bin/mise activate zsh)"
+
+# Starship / Prompt Customization
+eval "$(starship init zsh)"
+
+# Sheldon / Zsh Plugin Manager
+eval "$(sheldon source)"
+
+# Completion
+setopt complete_in_word
+setopt globdots
+setopt mark_dirs
+setopt list_packed
 
 # History
 HISTFILE=~/.zsh_history
@@ -19,15 +41,6 @@ SAVEHIST=10000
 setopt share_history
 setopt hist_ignore_dups
 setopt hist_reduce_blanks
-
-# Aliases
-. "$ZDOTDIR/.aliases"
-
-# Mise / Development Tools & Environment
-eval "$(mise activate zsh)"
-
-# Starship / Prompt Customization
-eval "$(starship init zsh)"
-
-# Sheldon / Zsh Plugin Manager
-eval "$(sheldon source)"
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_save_no_dups

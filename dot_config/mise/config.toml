@@ -2,9 +2,9 @@
 chezmoi = "latest"
 starship = "latest"
 "aqua:rossmacarthur/sheldon" = "latest"
-usage = "latest" # mise completion
+usage = "latest"
 
-node = "latest" 
+node = "latest"
 "npm:@antfu/ni" = "latest"
 
 [settings]
