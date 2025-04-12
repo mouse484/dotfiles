@@ -1,0 +1,6 @@
+alias mr='mise run --'
+
+{{ if eq .chezmoi.os "darwin" }}
+# trash command is available on macOS 14 Sonoma and later
+alias rm='trash'
+{{ end }}
