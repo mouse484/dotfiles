@@ -1,48 +1,9 @@
-# Locale
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# General
-autoload -Uz colors
-colors
-
-setopt +o nomatch
-setopt auto_cd
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt correct
-setopt no_beep
-setopt print_eight_bit
-setopt interactive_comments
-setopt extended_glob
-
-# Completion
-COMPLATION_PATH="$ZDOTDIR/.completion"
-mkdir -p "$COMPLATION_PATH"
-fpath=($COMPLATION_PATH $fpath)
-
-autoload -Uz compinit
-if [[ -f ${ZDOTDIR}/.zcompdump(#qN.mh-24) ]]; then
-  compinit
-else
-  compinit -C
-fi
-
-setopt complete_in_word
-setopt globdots
-setopt mark_dirs
-setopt list_packed
-
-# History
-HISTFILE="$ZDOTDIR/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
-setopt share_history
-setopt hist_ignore_dups
-setopt hist_reduce_blanks
-setopt hist_expire_dups_first
-setopt hist_find_no_dups
-setopt hist_save_no_dups
+# Load Configurations
+for file in $ZDOTDIR/conf.d/*.zsh; do
+	if [ -f $file ]; then
+		source "$file"
+	fi
+done
 
 # Mise / Development Tools & Environment
 eval "$(~/.local/bin/mise activate zsh)"
@@ -50,28 +11,3 @@ eval "$(~/.local/bin/mise activate zsh)"
 eval "$(starship init zsh)"
 # sheldon / Zsh Plugin Manager
 eval "$(sheldon source)"
-
-# Aliases
-. "$ZDOTDIR/.aliases"
-
-# Custom Functions
-for file in $ZDOTDIR/functions/*; do
-  if [[ -f $file ]]; then
-    source "$file"
-  fi
-done
-
-# Tools completion
-local completion_commands=(
-  'mise completion zsh'
-  'starship completions zsh'
-  'sheldon completions --shell zsh'
-  'chezmoi completion zsh'
-)
-
-for cmd in $completion_commands; do
-  local tool=${cmd%% *}
-  if [[ -f ${COMPLATION_PATH}/_${tool}(#qN.mh-24) ]]; then
-    eval "${cmd} >$COMPLATION_PATH/_${tool}"
-  fi
-done
