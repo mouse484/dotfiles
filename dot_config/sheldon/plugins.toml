@@ -39,3 +39,7 @@ apply = ["defer"]
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 apply = ["defer"]
+
+[plugins.zsh-eza]
+github = "z-shell/zsh-eza"
+apply = ["defer"]
