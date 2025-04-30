@@ -8,6 +8,7 @@ starship = "latest"
 fzf = "latest"
 bat = "latest"
 eza = "latest"
+ripgrep = "latest"
 # Git Tools
 github-cli = "latest"
 ghq = "latest"
