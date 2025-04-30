@@ -22,8 +22,8 @@ mkdir -p "$COMPLATION_PATH"
 fpath=($COMPLATION_PATH $fpath)
 
 autoload -Uz compinit
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-  zsh-defer compinit
+if [[ -f ${ZDOTDIR}/.zcompdump(#qN.mh-24) ]]; then
+  compinit
 else
   compinit -C
 fi
@@ -44,15 +44,22 @@ setopt hist_expire_dups_first
 setopt hist_find_no_dups
 setopt hist_save_no_dups
 
-# Aliases
-. "$ZDOTDIR/.aliases"
-
 # Mise / Development Tools & Environment
 eval "$(~/.local/bin/mise activate zsh)"
 # Starship / Prompt Customization
 eval "$(starship init zsh)"
 # sheldon / Zsh Plugin Manager
 eval "$(sheldon source)"
+
+# Aliases
+. "$ZDOTDIR/.aliases"
+
+# Custom Functions
+for file in $ZDOTDIR/functions/*; do
+  if [[ -f $file ]]; then
+    source "$file"
+  fi
+done
 
 # Tools completion
 local completion_commands=(
@@ -63,8 +70,8 @@ local completion_commands=(
 )
 
 for cmd in $completion_commands; do
-  local tool=${cmd%% *}  # コマンドの最初の単語を取得
-  if [[ -n ${COMPLATION_PATH}/_${tool}(#qN.mh+24) ]]; then
-    zsh-defer eval "${cmd} >$COMPLATION_PATH/_${tool}"
+  local tool=${cmd%% *}
+  if [[ -f ${COMPLATION_PATH}/_${tool}(#qN.mh-24) ]]; then
+    eval "${cmd} >$COMPLATION_PATH/_${tool}"
   fi
 done

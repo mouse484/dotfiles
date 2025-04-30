@@ -5,6 +5,11 @@ usage = "latest"
 chezmoi = "latest"
 starship = "latest"
 "aqua:rossmacarthur/sheldon" = "latest"
+fzf = "latest"
+bat = "latest"
+# Git Tools
+github-cli = "latest"
+ghq = "latest"
 # Language Tools
 node = "latest"
 "npm:@antfu/ni" = "latest"
