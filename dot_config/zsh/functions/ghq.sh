@@ -4,8 +4,7 @@ function _ghq-fzf(){
 }
 
 function ghq() {
-  local args=("$@")
-  local subcommand="${args[1]}"
+  local subcommand=$1
 
   case $subcommand in
     cd)
@@ -18,8 +17,20 @@ function ghq() {
     fi
     ;;
     *)
-    # Default
     command ghq "$@"
+    ;;
+  esac
+}
+
+function git(){
+  local subcommand=$1
+
+  case $subcommand in
+    clone)
+    command ghq get "${@:2}"
+    ;;
+    *)
+    command git "$@"
     ;;
   esac
 }
