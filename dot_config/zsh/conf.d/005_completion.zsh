@@ -1,8 +1,3 @@
-setopt complete_in_word
-setopt globdots
-setopt mark_dirs
-setopt list_packed
-
 COMPLATION_PATH="$ZDOTDIR/.completion"
 mkdir -p "$COMPLATION_PATH"
 fpath=($COMPLATION_PATH $fpath)
