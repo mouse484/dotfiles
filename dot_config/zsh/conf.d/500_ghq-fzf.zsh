@@ -27,7 +27,12 @@ function git() {
 
 	case $subcommand in
 	clone)
-		command ghq get "${@:2}"
+		echo "Do you want to clone with git cli? (y/N)"
+		if read -q; then
+			command git "$@"
+		else
+			command ghq get "${@:2}"
+		fi
 		;;
 	*)
 		command git "$@"
