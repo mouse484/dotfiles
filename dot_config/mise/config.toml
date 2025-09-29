@@ -18,6 +18,11 @@ ghq = "latest"
 # Language Tools
 node = "latest"
 "npm:@antfu/ni" = "latest"
+pnpm = "latest"
+deno = "latest"
+
+uv = "latest"
+rust = "latest"
 
 [settings]
 experimental = true
