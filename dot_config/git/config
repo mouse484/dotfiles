@@ -1,0 +1,17 @@
+[init]
+  defaultBranch = main
+
+[credential]
+  helper = 
+  helper = manager
+  useHttpPath = true
+
+[user]
+  name = mouse484
+  email = 38714187+mouse484@users.noreply.github.com
+
+[ghq]
+  root = ~/src
+
+[include]
+  path = ./.local.gitconfig

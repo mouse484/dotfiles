@@ -1,5 +1,0 @@
-[ghq]
-root = ~/src
-
-[includeIf "gitdir:~/src/github\.com/mouse484"]
-path = ./config/personal
