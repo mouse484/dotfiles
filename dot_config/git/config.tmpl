@@ -4,10 +4,12 @@
 [credential]
   helper = 
   helper = manager
+{{ if eq .chezmoi.os "darwin" }}
+  helper = /usr/local/share/gcm-core/git-credential-manager
+{{ end }}
   useHttpPath = true
 
 [user]
-  name = mouse484
   email = 38714187+mouse484@users.noreply.github.com
 
 [ghq]
