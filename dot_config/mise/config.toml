@@ -17,7 +17,7 @@ github-cli = "latest"
 ghq = "latest"
 # Language Tools
 node = "latest"
-"npm:@antfu/ni" = "latest"
+"npm:@antfu/ni" = { version = "latest", depends = "node" }
 pnpm = "latest"
 deno = "latest"
 
