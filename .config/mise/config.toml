@@ -1,0 +1,40 @@
+#:schema https://mise.en.dev/schema/mise.json
+
+[settings]
+dotfiles.root = "~/src/dotfiles"
+
+# Bootstrap configuration for mise: https://mise.jdx.dev/bootstrap.html#how-it-runs
+# === 1 ===
+[bootstrap.packages]
+"apt:zsh" = "latest"
+
+[bootstrap.hooks.post-packages]
+run = '''
+if [ -f /etc/zsh/zshenv ]; then
+  TARGET="/etc/zsh/zshenv"
+elif [ -f /etc/zshenv ]; then
+  TARGET="/etc/zshenv"
+fi
+
+if [ -n "$TARGET" ]; then
+  if ! grep -q "export ZDOTDIR" "$TARGET"; then
+    echo 'export ZDOTDIR="$HOME/.config/zsh"' | sudo tee -a "$TARGET"
+  fi
+fi
+'''
+
+# === 2 ===
+[bootstrap.repos]
+# "~/src/dotfiles" = { url = "https://github.com/mouse484/dotfiles.git", ref = "mise" }
+
+# === 3 ===
+[dotfiles]
+"~/.config/**/*" = "~/src/dotfiles/.config/**/*"
+
+# === 8 ===
+[bootstrap.user]
+login_shell = "/bin/zsh"
+
+# === 9 ===
+[bootstrap.mise_shell_activate]
+zshrc = { enabled = true, mode = "activate" }
