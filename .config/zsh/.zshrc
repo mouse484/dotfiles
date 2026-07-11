@@ -8,6 +8,9 @@ fi
 # Starship prompt: https://starship.rs/
 eval "$(starship init zsh)"
 
+# Sheldon: https://sheldon.cli.rs/
+eval "$(sheldon source)"
+
 # Load Configurations
 for file in $ZDOTDIR/.config/*.zsh; do
 	if [ -f $file ]; then

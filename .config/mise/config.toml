@@ -8,9 +8,8 @@ dotfiles.root = "~/src/dotfiles"
 # === 1. Packages ===
 [bootstrap.packages]
 # zsh
-"apt:zsh" = "latest"
+"brew:zsh" = "latest"
 # git
-"apt:git" = "latest"
 "brew:git" = "latest"
 "brew-cask:git-credential-manager" = "latest"
 
@@ -40,6 +39,7 @@ login_shell = "/bin/zsh"
 # === 9. Tools ===
 [tools]
 starship = "latest"
+sheldon = "latest"
 ghq = "latest"
 fzf = "latest"
 bat = "latest"
