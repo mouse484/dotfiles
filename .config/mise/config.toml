@@ -38,6 +38,7 @@ login_shell = "/bin/zsh"
 
 # === 9. Tools ===
 [tools]
+usage = "latest"
 starship = "latest"
 sheldon = "latest"
 ghq = "latest"
