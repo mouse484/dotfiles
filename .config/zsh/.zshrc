@@ -7,3 +7,10 @@ fi
 
 # Starship prompt: https://starship.rs/
 eval "$(starship init zsh)"
+
+# Load Configurations
+for file in $ZDOTDIR/.config/*.zsh; do
+	if [ -f $file ]; then
+		source "$file"
+	fi
+done

@@ -7,6 +7,9 @@
   helper = /usr/local/share/gcm-core/git-credential-manager
   useHttpPath = true
 
+[ghq]
+  root = ~/src
+
 [includeIf "gitdir:~/src/mouse484/"]
   path = ./.config/mouse484
 [includeIf "gitdir:~/src/dotfiles/"]
