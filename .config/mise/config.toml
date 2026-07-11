@@ -8,7 +8,7 @@ dotfiles.root = "~/src/mouse484/dotfiles"
 # === 1. Packages ===
 [bootstrap.packages]
 # zsh
-"brew:zsh" = "latest"
+"apt:zsh" = "latest"
 # git
 "brew:git" = "latest"
 "brew-cask:git-credential-manager" = "latest"
@@ -48,6 +48,7 @@ bat = "latest"
 ghq = "latest"
 github-cli = "latest"
 # Development
+node = "latest"
 ni = "latest"
 
 # === Shell Alias ===
