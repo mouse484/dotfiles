@@ -4,10 +4,10 @@
 
 #### 1. Install [mise](https://mise.jdx.dev/).
 
-#### 2. Clone this repository into `~/src/dotfiles`
+#### 2. Clone this repository into `~/src/mouse484/dotfiles`
 ```sh
-mkdir -p ~/src
-cd ~/src
+mkdir -p ~/src/mouse484
+cd ~/src/mouse484
 git clone https://github.com/mouse484/dotfiles.git
 ```
 #### 3. Run `mise bootstrap` to install the dotfiles and dependencies.

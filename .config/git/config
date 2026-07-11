@@ -12,7 +12,6 @@
 
 [includeIf "gitdir:~/src/mouse484/"]
   path = ./.config/mouse484
-[includeIf "gitdir:~/src/dotfiles/"]
-  path = ./.config/mouse484
+
 [include]
   path = ./config.local

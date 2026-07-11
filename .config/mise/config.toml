@@ -1,7 +1,7 @@
 #:schema https://mise.en.dev/schema/mise.json
 
 [settings]
-dotfiles.root = "~/src/dotfiles"
+dotfiles.root = "~/src/mouse484/dotfiles"
 
 # Bootstrap configuration for mise: https://mise.jdx.dev/bootstrap.html#how-it-runs
 
@@ -30,7 +30,7 @@ fi
 
 # === 3. Dotfiles ===
 [dotfiles]
-"~/.config/" = { source = "~/src/dotfiles/.config/", mode = "symlink-each" }
+"~/.config/" = { source = "~/src/mouse484/dotfiles/.config/", mode = "symlink-each" }
 
 # === 8. User Configuration ===
 [bootstrap.user]
