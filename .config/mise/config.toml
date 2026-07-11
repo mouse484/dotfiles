@@ -4,7 +4,8 @@
 dotfiles.root = "~/src/dotfiles"
 
 # Bootstrap configuration for mise: https://mise.jdx.dev/bootstrap.html#how-it-runs
-# === 1 ===
+
+# === 1. Packages ===
 [bootstrap.packages]
 "apt:zsh" = "latest"
 
@@ -23,19 +24,15 @@ if [ -n "$TARGET" ]; then
 fi
 '''
 
-# === 2 ===
-[bootstrap.repos]
-# "~/src/dotfiles" = { url = "https://github.com/mouse484/dotfiles.git", ref = "mise" }
-
-# === 3 ===
+# === 3. Dotfiles ===
 [dotfiles]
 "~/.config/**/*.toml" = "~/src/dotfiles/.config/**/*.toml"
 "~/.config/**/*.zsh*" = "~/src/dotfiles/.config/**/*.zsh*"
 
-# === 8 ===
+# === 8. User Configuration ===
 [bootstrap.user]
 login_shell = "/bin/zsh"
 
-# === 9 ===
+# === 9. Tools ===
 [tools]
 starship = "latest"
