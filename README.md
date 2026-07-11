@@ -9,6 +9,7 @@
 mkdir -p ~/src/mouse484
 cd ~/src/mouse484
 git clone https://github.com/mouse484/dotfiles.git
+cd dotfiles
 ```
 #### 3. Run `mise bootstrap` to install the dotfiles and dependencies.
 ```sh
