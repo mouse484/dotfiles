@@ -4,3 +4,6 @@ if command -v mise >/dev/null 2>&1; then
 else
     eval "$(~/.local/bin/mise activate zsh)"
 fi
+
+# Starship prompt: https://starship.rs/
+eval "$(starship init zsh)"

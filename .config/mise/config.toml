@@ -29,12 +29,13 @@ fi
 
 # === 3 ===
 [dotfiles]
-"~/.config/**/*" = "~/src/dotfiles/.config/**/*"
+"~/.config/**/*.toml" = "~/src/dotfiles/.config/**/*.toml"
+"~/.config/**/*.zsh*" = "~/src/dotfiles/.config/**/*.zsh*"
 
 # === 8 ===
 [bootstrap.user]
 login_shell = "/bin/zsh"
 
 # === 9 ===
-[bootstrap.mise_shell_activate]
-zshrc = { enabled = true, mode = "activate" }
+[tools]
+starship = "latest"
