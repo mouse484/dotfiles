@@ -11,7 +11,7 @@
   root = ~/src
 
 [includeIf "gitdir:~/src/mouse484/"]
-  path = ./.config/mouse484
+  path = ./conf.d/mouse484
 
 [include]
   path = ./config.local
