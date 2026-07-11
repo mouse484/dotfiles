@@ -1,0 +1,21 @@
+[bootstrap.packages]
+"apt:zsh" = "latest"
+
+
+[bootstrap.hooks.pre-user]
+run = '''
+if [ -f /etc/zsh/zshenv ]; then
+  TARGET="/etc/zsh/zshenv"
+elif [ -f /etc/zshenv ]; then
+  TARGET="/etc/zshenv"
+fi
+
+if [ -n "$TARGET" ]; then
+  if ! grep -q "export ZDOTDIR" "$TARGET"; then
+    echo 'export ZDOTDIR="$HOME/.config/zsh"' | sudo tee -a "$TARGET"
+  fi
+fi
+'''
+
+[bootstrap.user]
+login_shell = "/bin/zsh"

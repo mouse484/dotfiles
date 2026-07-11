@@ -1,0 +1,3 @@
+[bootstrap.packages]
+"brew:git" = "latest"
+"brew-cask:git-credential-manager" = "latest"
