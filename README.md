@@ -2,21 +2,24 @@
 
 ## how to use
 
-```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply mouse484
-```
+#### 1. Install [mise](https://mise.jdx.dev/).
 
-`/etc/zshenv` or `/etc/zsh/zshenv` to set `ZDOTDIR` for XDG compliance.
+#### 2. Clone this repository into `~/src/mouse484/dotfiles`
 ```sh
-export ZDOTDIR=$HOME/.config/zsh
+mkdir -p ~/src/mouse484
+cd ~/src/mouse484
+git clone https://github.com/mouse484/dotfiles.git
+```
+#### 3. Run `mise bootstrap` to install the dotfiles and dependencies.
+```sh
+~/.local/bin/mise bootstrap
 ```
 
 ## Features
 
 | Name                               | Description        |
 | ---------------------------------- | ------------------ |
-| [chezmoi](https://www.chezmoi.io/) | Dotfiles Manager   |
-| [mise](https://mise.jdx.dev/)      | Dev Env            |
+| [mise](https://mise.jdx.dev/)      | Dev Environment    |
 | [zsh](https://www.zsh.org/)        | Main Shell         |
 | [Starship](https://starship.rs/)   | Cross-Shell Prompt |
 | [Sheldon](https://sheldon.cli.rs/) | Zsh Plugin Manager |

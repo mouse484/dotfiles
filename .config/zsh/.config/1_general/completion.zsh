@@ -9,7 +9,6 @@ local completion_commands=(
 	'mise completion zsh'
 	'starship completions zsh'
 	'sheldon completions --shell zsh'
-	'chezmoi completion zsh'
 )
 
 for cmd in $completion_commands; do
