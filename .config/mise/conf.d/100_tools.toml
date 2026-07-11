@@ -5,6 +5,7 @@ starship = "latest"
 sheldon = "latest"
 fzf = "latest"
 bat = "latest"
+eza = "latest"
 # Git
 ghq = "latest"
 github-cli = "latest"
