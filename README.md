@@ -6,8 +6,8 @@
 
 #### 2. Clone this repository into `~/src/mouse484/dotfiles`
 ```sh
-mkdir -p ~/src/mouse484
-cd ~/src/mouse484
+mkdir -p ~/src/github.com/mouse484
+cd ~/src/github.com/mouse484
 git clone https://github.com/mouse484/dotfiles.git
 cd dotfiles
 ```

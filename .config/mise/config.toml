@@ -1,7 +1,7 @@
 #:schema https://mise.en.dev/schema/mise.json
 
 [settings]
-dotfiles.root = "~/src/mouse484/dotfiles"
+dotfiles.root = "~/src/github.com/mouse484/dotfiles"
 
 [dotfiles]
-"~/.config/" = { source = "~/src/mouse484/dotfiles/.config/", mode = "symlink-each" }
+"~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }
