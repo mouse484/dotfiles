@@ -38,13 +38,17 @@ login_shell = "/bin/zsh"
 
 # === 9. Tools ===
 [tools]
+# Shell
 usage = "latest"
 starship = "latest"
 sheldon = "latest"
-ghq = "latest"
 fzf = "latest"
 bat = "latest"
-
+# Git
+ghq = "latest"
+github-cli = "latest"
+# Development
+ni = "latest"
 
 # === Shell Alias ===
 [shell_alias]
