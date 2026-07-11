@@ -1,55 +1,7 @@
 #:schema https://mise.en.dev/schema/mise.json
 
 [settings]
-dotfiles.root = "~/src/mouse484/dotfiles"
+dotfiles.root = "~/src/github.com/mouse484/dotfiles"
 
-# Bootstrap configuration for mise: https://mise.jdx.dev/bootstrap.html#how-it-runs
-
-# === 1. Packages ===
-[bootstrap.packages]
-# zsh
-"brew:zsh" = "latest"
-# git
-"brew:git" = "latest"
-"brew-cask:git-credential-manager" = "latest"
-
-[bootstrap.hooks.post-packages]
-run = '''
-if [ -f /etc/zsh/zshenv ]; then
-  TARGET="/etc/zsh/zshenv"
-elif [ -f /etc/zshenv ]; then
-  TARGET="/etc/zshenv"
-fi
-
-if [ -n "$TARGET" ]; then
-  if ! grep -q "export ZDOTDIR" "$TARGET"; then
-    echo 'export ZDOTDIR="$HOME/.config/zsh"' | sudo tee -a "$TARGET"
-  fi
-fi
-'''
-
-# === 3. Dotfiles ===
 [dotfiles]
-"~/.config/" = { source = "~/src/mouse484/dotfiles/.config/", mode = "symlink-each" }
-
-# === 8. User Configuration ===
-[bootstrap.user]
-login_shell = "/bin/zsh"
-
-# === 9. Tools ===
-[tools]
-# Shell
-usage = "latest"
-starship = "latest"
-sheldon = "latest"
-fzf = "latest"
-bat = "latest"
-# Git
-ghq = "latest"
-github-cli = "latest"
-# Development
-ni = "latest"
-
-# === Shell Alias ===
-[shell_alias]
-cat = "bat"
+"~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }

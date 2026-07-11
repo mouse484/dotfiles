@@ -1,4 +1,4 @@
-for file in $ZDOTDIR/.config/*/*.zsh; do
+for file in $ZDOTDIR/conf.d/*/*.zsh; do
 	if [ -f $file ]; then
 		source "$file"
 	fi

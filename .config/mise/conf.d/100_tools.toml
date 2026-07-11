@@ -1,0 +1,13 @@
+[tools]
+# Shell
+usage = "latest"
+starship = "latest"
+sheldon = "latest"
+fzf = "latest"
+bat = "latest"
+# Git
+ghq = "latest"
+github-cli = "latest"
+# Development
+node = "latest"
+ni = "latest"

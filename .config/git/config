@@ -10,8 +10,8 @@
 [ghq]
   root = ~/src
 
-[includeIf "gitdir:~/src/mouse484/"]
-  path = ./.config/mouse484
+[includeIf "gitdir:~/src/github.com/mouse484/"]
+  path = ./conf.d/mouse484
 
 [include]
   path = ./config.local
