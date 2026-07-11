@@ -7,7 +7,12 @@ dotfiles.root = "~/src/dotfiles"
 
 # === 1. Packages ===
 [bootstrap.packages]
+# zsh
 "apt:zsh" = "latest"
+# git
+"apt:git" = "latest"
+"brew:git" = "latest"
+"brew-cask:git-credential-manager" = "latest"
 
 [bootstrap.hooks.post-packages]
 run = '''
@@ -26,8 +31,7 @@ fi
 
 # === 3. Dotfiles ===
 [dotfiles]
-"~/.config/**/*.toml" = "~/src/dotfiles/.config/**/*.toml"
-"~/.config/**/*.zsh*" = "~/src/dotfiles/.config/**/*.zsh*"
+"~/.config/" = { source = "~/src/dotfiles/.config/", mode = "symlink-each" }
 
 # === 8. User Configuration ===
 [bootstrap.user]
