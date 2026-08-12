@@ -1,3 +1,5 @@
+#:schema https://mise.en.dev/schema/mise.json
+
 [bootstrap.packages]
-"brew:git" = "latest"
-"brew-cask:git-credential-manager" = "latest"
+"brew:git" = { version = "latest", os = "macos" }
+"brew-cask:git-credential-manager" = { version = "latest", os = "macos" }
