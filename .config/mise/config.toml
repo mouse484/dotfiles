@@ -3,6 +3,7 @@
 [settings]
 dotfiles.root = "~/src/github.com/mouse484/dotfiles"
 idiomatic_version_file_enable_tools = ["node", "pnpm", "npm"]
+auto_env = true
 
 [dotfiles]
 "~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }

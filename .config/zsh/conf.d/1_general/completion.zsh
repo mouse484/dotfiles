@@ -8,7 +8,6 @@ compinit -C
 local completion_commands=(
 	'mise completion zsh'
 	'starship completions zsh'
-	'sheldon completions --shell zsh'
 )
 
 for cmd in $completion_commands; do

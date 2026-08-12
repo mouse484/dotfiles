@@ -1,8 +1,9 @@
+#:schema https://mise.en.dev/schema/mise.json
+
 [tools]
 # Shell
 usage = "latest"
 starship = "latest"
-sheldon = "latest"
 fzf = "latest"
 bat = "latest"
 eza = "latest"
