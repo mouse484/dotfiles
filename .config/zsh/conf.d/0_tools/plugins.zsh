@@ -3,6 +3,9 @@ autoload -Uz antidote
 
 zstyle ":antidote:bundle:*" min-age 7
 
+zstyle ':antidote:static' zcompile 'yes'
+zstyle ':antidote:bundle:*' zcompile 'yes'
+
 plugins=$ZDOTDIR/plugins
 static_plugins=${plugins}.zsh
 
