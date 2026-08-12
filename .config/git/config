@@ -2,11 +2,14 @@
   defaultBranch = main
 
 [credential]
-  helper = 
-  helper = manager
-  helper = /usr/local/share/gcm-core/git-credential-manager
   useHttpPath = true
 
+  helper = 
+  helper = manager
+  # MacOS
+  helper = /usr/local/share/gcm-core/git-credential-manager
+  # WSL
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [ghq]
   root = ~/src
 
