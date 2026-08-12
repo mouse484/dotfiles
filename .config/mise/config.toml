@@ -7,4 +7,5 @@ idiomatic_version_file_enable_tools = ["node", "pnpm", "npm"]
 [dotfiles]
 "~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }
 
-
+[bootstrap.repos]
+"~/src/github.com/mouse484/dotfiles" = { url = "https://github.com/mouse484/dotfiles.git", ref = "main"}
