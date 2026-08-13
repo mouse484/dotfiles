@@ -12,5 +12,7 @@ local completion_commands=(
 
 for cmd in $completion_commands; do
 	local tool=${cmd%% *}
-	eval "${cmd} >$COMPLATION_PATH/_${tool}" 2>/dev/null
+	local file=$COMPLATION_PATH/_${tool}
+	[[ -f $file && $file -nt ${commands[$tool]-} ]] && continue
+	${cmd} >$file 2>/dev/null
 done
