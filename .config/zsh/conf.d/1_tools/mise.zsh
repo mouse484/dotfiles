@@ -6,7 +6,7 @@ else
 fi
 
 mise_cache=$ZSH_CACHE/.mise.activate.zsh
-if [[ ! -f $mise_cache || $mise_cache -nt $mise_bin ]]; then
+if [[ ! -f $mise_cache || $mise_bin -nt $mise_cache ]]; then
 	$mise_bin activate zsh >|$mise_cache
 fi
 source $mise_cache
