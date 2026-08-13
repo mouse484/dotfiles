@@ -18,9 +18,9 @@ cd dotfiles
 
 ## Features
 
-| Name                               | Description        |
-| ---------------------------------- | ------------------ |
-| [mise](https://mise.jdx.dev/)      | Dev Environment    |
-| [zsh](https://www.zsh.org/)        | Main Shell         |
-| [Starship](https://starship.rs/)   | Cross-Shell Prompt |
-| [Sheldon](https://sheldon.cli.rs/) | Zsh Plugin Manager |
+| Name                             | Description        |
+| -------------------------------- | ------------------ |
+| [mise](https://mise.jdx.dev/)    | Dev Environment    |
+| [zsh](https://www.zsh.org/)      | Main Shell         |
+| [Starship](https://starship.rs/) | Cross-Shell Prompt |
+| [antidote](https://antidote.sh/) | Zsh Plugin Manager |

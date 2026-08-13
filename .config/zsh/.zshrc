@@ -1,5 +1,5 @@
-for file in $ZDOTDIR/conf.d/*/*.zsh; do
-	if [ -f $file ]; then
-		source "$file"
-	fi
+mkdir -p "$ZSH_CACHE"
+
+for file in "$ZDOTDIR"/conf.d/*/*.zsh(N); do
+	source "$file"
 done
