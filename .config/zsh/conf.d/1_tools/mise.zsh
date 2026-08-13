@@ -7,7 +7,6 @@ fi
 
 mise_cache=$ZSH_CACHE/.mise.activate.zsh
 if [[ ! -f $mise_cache || $mise_cache -nt $mise_bin ]]; then
-	mkdir -p ${mise_cache:h}
 	$mise_bin activate zsh >|$mise_cache
 fi
 source $mise_cache

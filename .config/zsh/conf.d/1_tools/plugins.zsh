@@ -10,7 +10,6 @@ plugins=$ZDOTDIR/plugins
 static_plugins=$ZSH_CACHE/plugins.zsh
 
 if [[ ! ${static_plugins} -nt ${plugins} ]]; then
-	mkdir -p ${static_plugins:h}
 	antidote bundle <${plugins} >|${static_plugins}
 fi
 
