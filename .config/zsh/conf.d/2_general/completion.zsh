@@ -1,9 +1,9 @@
-COMPLATION_PATH="$ZDOTDIR/.completion"
+COMPLATION_PATH="$XDG_CACHE_HOME/zsh/completion"
 mkdir -p "$COMPLATION_PATH"
 fpath=($COMPLATION_PATH $fpath)
 
 autoload -Uz compinit
-compinit -C
+compinit -C -d "$XDG_CACHE_HOME/zsh/.zcompdump"
 
 local completion_commands=(
 	'mise completion zsh'
