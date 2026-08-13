@@ -1,4 +1,5 @@
 completion_path="$ZSH_CACHE/completion"
+mkdir -p $completion_path
 fpath=($completion_path $fpath)
 
 completion_commands=(
