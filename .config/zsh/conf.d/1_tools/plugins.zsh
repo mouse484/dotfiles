@@ -7,7 +7,7 @@ zstyle ':antidote:static' zcompile 'yes'
 zstyle ':antidote:bundle:*' zcompile 'yes'
 
 plugins=$ZDOTDIR/plugins
-static_plugins=$XDG_CACHE_HOME/zsh/plugins.zsh
+static_plugins=$ZSH_CACHE/plugins.zsh
 
 if [[ ! ${static_plugins} -nt ${plugins} ]]; then
 	mkdir -p ${static_plugins:h}

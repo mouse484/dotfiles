@@ -1,4 +1,4 @@
-COMPLATION_PATH="$XDG_CACHE_HOME/zsh/completion"
+COMPLATION_PATH="$ZSH_CACHE/completion"
 mkdir -p "$COMPLATION_PATH"
 fpath=($COMPLATION_PATH $fpath)
 

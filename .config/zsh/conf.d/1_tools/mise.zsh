@@ -5,7 +5,7 @@ else
 	mise_bin=$HOME/.local/bin/mise
 fi
 
-mise_cache=$XDG_CACHE_HOME/zsh/.mise.activate.zsh
+mise_cache=$ZSH_CACHE/.mise.activate.zsh
 if [[ ! -f $mise_cache || $mise_cache -nt $mise_bin ]]; then
 	mkdir -p ${mise_cache:h}
 	$mise_bin activate zsh >|$mise_cache
