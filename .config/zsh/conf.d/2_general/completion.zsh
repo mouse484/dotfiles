@@ -8,7 +8,5 @@ completion_commands=(
 
 for cmd in $completion_commands; do
 	tool=${cmd%% *}
-	file=$completion_path/_${tool}
-	[[ -f $file && $file -nt ${commands[$tool]-} ]] && continue
-	${cmd} >$file 2>/dev/null
+	cache $completion_path/_${tool} ${commands[$tool]-} ${(z)cmd} 2>/dev/null
 done

@@ -1,14 +1,8 @@
 # mise: https://mise.jdx.dev/
-if command -v mise >/dev/null 2>&1; then
-	mise_bin=$(command -v mise)
-else
+if ! mise_bin=$(command -v mise); then
 	mise_bin=$HOME/.local/bin/mise
 fi
 
-mise_cache=$ZSH_CACHE/.mise.activate.zsh
-if [[ ! -f $mise_cache || $mise_bin -nt $mise_cache ]]; then
-	$mise_bin activate zsh >|$mise_cache
-fi
-source $mise_cache
+cache -s $ZSH_CACHE/.mise.activate.zsh $mise_bin $mise_bin activate zsh
 
-unset mise_bin mise_cache
+unset mise_bin
