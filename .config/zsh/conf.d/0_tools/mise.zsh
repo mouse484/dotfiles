@@ -1,6 +1,15 @@
 # mise: https://mise.jdx.dev/
 if command -v mise >/dev/null 2>&1; then
-    eval "$(mise activate zsh)"
+	mise_bin=$(command -v mise)
 else
-    eval "$(~/.local/bin/mise activate zsh)"
+	mise_bin=$HOME/.local/bin/mise
 fi
+
+mise_cache=$XDG_CACHE_HOME/zsh/.mise.activate.zsh
+if [[ ! -f $mise_cache || $mise_cache -nt $mise_bin ]]; then
+	mkdir -p ${mise_cache:h}
+	$mise_bin activate zsh >|$mise_cache
+fi
+source $mise_cache
+
+unset mise_bin mise_cache
