@@ -6,7 +6,8 @@ idiomatic_version_file_enable_tools = ["node", "pnpm", "npm"]
 auto_env = true
 
 [dotfiles]
-"~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }
+"~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each", exclude = ["git/config"] }
+"~/.config/git/config" = { source = "~/src/github.com/mouse484/dotfiles/.config/git/config", mode = "template" }
 "~/.zshenv/zdotdir" = { line = 'export ZDOTDIR="$HOME/.config/zsh"; source "$ZDOTDIR/.zshenv"' }
 
 [bootstrap.repos]

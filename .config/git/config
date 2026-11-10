@@ -3,6 +3,11 @@
 
 [credential]
   useHttpPath = true
+  helper =
+  helper = manager
+  helper = manager.exe
+  helper = {{ os(macos="osxkeychain", linux="cache", windows="wincred") }}
+  credentialStore = {{ os(macos="keychain", linux="cache", windows="wincredman") }}
 
 [ghq]
   root = ~/src
