@@ -2,21 +2,19 @@
 
 ## Setup
 
-Requires [mise](https://mise.jdx.dev/) 2026.11.5+ on PATH.
-Supports Debian/Ubuntu Linux and Apple Silicon macOS.
+Install [mise](https://mise.jdx.dev/). If you use mise.run, add it to PATH:
+
+```sh
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+Then bootstrap and restart Zsh:
 
 ```sh
 mise bootstrap --from https://github.com/mouse484/dotfiles.git --from-dir ~/src/github.com/mouse484/dotfiles
 ```
 
 Keep this checkout path: the configuration uses it as the dotfile source.
-Restart Zsh after setup.
-
-If you installed mise with mise.run, add `~/.local/bin` to PATH first:
-
-```sh
-export PATH="$HOME/.local/bin:$PATH"
-```
 
 ## Updates
 
