@@ -11,12 +11,15 @@ The configuration uses apt on Linux and mise's brew manager for antidote.
 Intel macOS and Linux distributions without apt are not currently supported.
 
 ```sh
-~/.local/bin/mise bootstrap --from https://github.com/mouse484/dotfiles.git --from-dir ~/src/github.com/mouse484/dotfiles --config-dir .config/mise
+mkdir -p ~/src/github.com/mouse484
+git clone https://github.com/mouse484/dotfiles.git ~/src/github.com/mouse484/dotfiles
+cd ~/src/github.com/mouse484/dotfiles
+~/.local/bin/mise bootstrap
 ```
 
-You can choose another checkout location with `--from-dir`. The global mise
-config directory must be missing, empty, or already linked to this checkout.
-For an existing checkout, pass its location as `--from-dir`.
+The checkout location is fixed to `~/src/github.com/mouse484/dotfiles`.
+Run the initial bootstrap from that directory; mise discovers `.config/mise`
+and deploys the configuration to `~/.config`.
 
 Restart Zsh after bootstrap. ZDOTDIR is configured in your own `~/.zshenv`.
 If an earlier bootstrap added the ZDOTDIR export to `/etc/zsh/zshenv` or
