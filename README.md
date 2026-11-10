@@ -11,12 +11,23 @@ The configuration uses apt on Linux and mise's brew manager for antidote.
 Intel macOS and Linux distributions without apt are not currently supported.
 
 ```sh
-~/.local/bin/mise bootstrap --from https://github.com/mouse484/dotfiles.git
+~/.local/bin/mise bootstrap --from https://github.com/mouse484/dotfiles.git --from-dir ~/src/github.com/mouse484/dotfiles
 ```
 
-mise fetches the bootstrap configuration, then `[bootstrap.repos]` clones the
-managed checkout to `~/src/github.com/mouse484/dotfiles`. Dotfiles are linked
-from that fixed location into `~/.config`; no config directory option is needed.
+The checkout location is fixed to `~/src/github.com/mouse484/dotfiles`.
+`--from-dir` makes the bootstrap checkout and the dotfile source the same
+repository. No config directory option is needed: bootstrap links the files
+into `~/.config`.
+
+To test another branch on a fresh machine, append `?ref=<branch>` to the URL:
+
+```sh
+~/.local/bin/mise bootstrap --from 'https://github.com/mouse484/dotfiles.git?ref=fix/mise-bootstrap-shell-init' --from-dir ~/src/github.com/mouse484/dotfiles
+```
+
+`[bootstrap.repos]` does not pin a branch, so bootstrap preserves the selected
+branch. An existing checkout is reused; switch its branch explicitly with Git
+before testing another branch. Add `--update` to refresh a reused checkout.
 
 For an existing checkout, you can also run `~/.local/bin/mise bootstrap` from
 `~/src/github.com/mouse484/dotfiles`.
