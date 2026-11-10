@@ -13,7 +13,7 @@ Keep this checkout path: the configuration uses it as the dotfile source.
 ## Updates
 
 ```sh
-mise bootstrap --dry-run           # Preview changes
+mise bootstrap --dry-run          # Preview changes
 mise bootstrap --update --upgrade # Update the checkout, packages and tools
 ```
 
