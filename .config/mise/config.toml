@@ -1,12 +1,12 @@
 #:schema https://mise.en.dev/schema/mise.json
 
 [settings]
-dotfiles.root = "~/src/github.com/mouse484/dotfiles"
+dotfiles.root = "{{ config_source | canonicalize | dirname | dirname | dirname }}"
 idiomatic_version_file_enable_tools = ["node", "pnpm", "npm"]
 auto_env = true
 
 [dotfiles]
-"~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }
-
-[bootstrap.repos]
-"~/src/github.com/mouse484/dotfiles" = { url = "https://github.com/mouse484/dotfiles.git", ref = "main"}
+# The mise directory is linked by bootstrap --config-dir.
+"~/.config/git" = { mode = "symlink-each" }
+"~/.config/zsh" = { mode = "symlink-each" }
+"~/.config/starship.toml" = { mode = "symlink" }
