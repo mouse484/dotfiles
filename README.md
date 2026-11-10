@@ -2,16 +2,10 @@
 
 ## Setup
 
-Install [mise](https://mise.jdx.dev/). If you use mise.run, add it to PATH:
+Install [mise](https://mise.jdx.dev/), then bootstrap and restart Zsh:
 
 ```sh
-export PATH="$HOME/.local/bin:$PATH"
-```
-
-Then bootstrap and restart Zsh:
-
-```sh
-mise bootstrap --from https://github.com/mouse484/dotfiles.git --from-dir ~/src/github.com/mouse484/dotfiles
+~/.local/bin/mise bootstrap --from https://github.com/mouse484/dotfiles.git --from-dir ~/src/github.com/mouse484/dotfiles
 ```
 
 Keep this checkout path: the configuration uses it as the dotfile source.
