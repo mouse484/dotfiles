@@ -7,6 +7,7 @@ auto_env = true
 
 [dotfiles]
 "~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }
+"~/.zshenv/zdotdir" = { line = 'export ZDOTDIR="$HOME/.config/zsh"; source "$ZDOTDIR/.zshenv"' }
 
 [bootstrap.repos]
 "~/src/github.com/mouse484/dotfiles" = { url = "https://github.com/mouse484/dotfiles.git" }

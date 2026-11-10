@@ -2,4 +2,35 @@
 
 [bootstrap.packages]
 "brew:git" = { version = "latest", os = "macos" }
-"brew-cask:git-credential-manager" = { version = "latest", os = "macos" }
+
+[env]
+_.path = [
+  "/opt/homebrew/bin",
+  "/usr/local/bin",
+  "/usr/local/share/gcm-core",
+  "/mnt/c/Program Files/Git/ucrt64/bin",
+  "/mnt/c/Program Files/Git/mingw64/bin",
+  "/mnt/c/Program Files/Git/clangarm64/bin",
+]
+
+[tasks.bootstrap]
+description = "Configure the available Git credential helper"
+run = '''
+case "$(uname -s)" in
+  Darwin) helper=osxkeychain ;;
+  *) helper=cache ;;
+esac
+for candidate in manager.exe manager; do
+  if command -v "git-credential-$candidate" >/dev/null 2>&1; then
+    helper=$candidate
+    break
+  fi
+done
+# Use the machine-local file explicitly: --global could write through the XDG symlink.
+git config --file "$HOME/.gitconfig" --replace-all credential.helper ""
+git config --file "$HOME/.gitconfig" --add credential.helper "$helper"
+if [ "$(uname -s)" = Linux ] && [ "$helper" = manager ] &&
+   [ -z "${GCM_CREDENTIAL_STORE:-}" ] && ! git config --get credential.credentialStore >/dev/null; then
+  git config --file "$HOME/.gitconfig" credential.credentialStore cache
+fi
+'''
