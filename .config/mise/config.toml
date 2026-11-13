@@ -3,14 +3,14 @@
 min_version = { hard = "2026.6.6", soft = "2026.11.5" }
 
 [settings]
-dotfiles.root = "~/src/github.com/mouse484/dotfiles"
+dotfiles.root = "~/dotfiles"
 idiomatic_version_file_enable_tools = ["node", "pnpm", "npm"]
 auto_env = true
 
 [dotfiles]
-"~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }
-"~/.config/git/credential.config" = { source = "~/src/github.com/mouse484/dotfiles/.config/git/credential.config.tera", mode = "template" }
+"~/.config/" = { source = "~/dotfiles/.config/", mode = "symlink-each" }
+"~/.config/git/credential.config" = { source = "~/dotfiles/.config/git/credential.config.tera", mode = "template" }
 "~/.zshenv/zdotdir" = { line = 'export ZDOTDIR="$HOME/.config/zsh"; source "$ZDOTDIR/.zshenv"' }
 
 [bootstrap.repos]
-"~/src/github.com/mouse484/dotfiles" = { url = "https://github.com/mouse484/dotfiles.git" }
+"~/dotfiles" = { url = "https://github.com/mouse484/dotfiles.git" }

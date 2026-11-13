@@ -10,6 +10,9 @@
 [includeIf "gitdir:~/src/github.com/mouse484/"]
   path = ./conf.d/mouse484
 
+[includeIf "gitdir:~/dotfiles/"]
+  path = ./conf.d/mouse484
+
 [include]
   path = ./credential.config
   path = ./config.local
