@@ -11,6 +11,16 @@ function ghq() {
       fi
     fi
     ;;
+  get|clone)
+    shift
+    local arg
+    for arg in "$@"; do
+      case $arg in
+        --bare|--clean-bare|--help|-h) command ghq "$subcommand" "$@"; return $? ;;
+      esac
+    done
+    command ghq "$subcommand" --clean-bare "$@"
+    ;;
   *)
     command ghq "$@"
     ;;

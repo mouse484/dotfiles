@@ -5,7 +5,7 @@
 Install [mise](https://mise.jdx.dev/), then bootstrap and restart Zsh:
 
 ```sh
-~/.local/bin/mise bootstrap --from https://github.com/mouse484/dotfiles.git --from-dir ~/src/github.com/mouse484/dotfiles
+~/.local/bin/mise bootstrap --from https://github.com/mouse484/dotfiles.git --from-dir ~/dotfiles
 ```
 
 Keep this checkout path: the configuration uses it as the dotfile source.
