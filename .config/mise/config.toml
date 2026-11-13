@@ -9,6 +9,7 @@ auto_env = true
 
 [dotfiles]
 "~/.config/" = { source = "~/src/github.com/mouse484/dotfiles/.config/", mode = "symlink-each" }
+"~/.config/git/credential.config" = { source = "~/src/github.com/mouse484/dotfiles/.config/git/credential.config.tera", mode = "template" }
 
 [bootstrap.repos]
 "~/src/github.com/mouse484/dotfiles" = { url = "https://github.com/mouse484/dotfiles.git" }
