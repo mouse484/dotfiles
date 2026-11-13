@@ -5,8 +5,5 @@
 "brew:antidote" = "latest"
 
 
-[dotfiles]
-"~/.zshenv/zdotdir" = { line = 'export ZDOTDIR="$HOME/.config/zsh"; source "$ZDOTDIR/.zshenv"' }
-
 [bootstrap.user]
 login_shell = "/bin/zsh"
